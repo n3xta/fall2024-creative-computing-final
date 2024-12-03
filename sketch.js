@@ -19,8 +19,8 @@ class VideoCanvas {
       if (keypoint && keypoint.confidence > 0.1) {
         const x = keypoint.x;
         const y = keypoint.y;
-        const cropWidth = 50; // 裁剪区域的宽度
-        const cropHeight = 50; // 裁剪区域的高度
+        const cropWidth = 35; // 裁剪区域的宽度
+        const cropHeight = 35; // 裁剪区域的高度
 
         // 确保裁剪区域在视频范围内
         const sx = Math.max(0, x - cropWidth / 2);
