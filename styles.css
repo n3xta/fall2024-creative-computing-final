@@ -128,6 +128,11 @@ body {
     text-align: center;
     margin-top: 20px;
     color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
 }
 
 @keyframes flicker {
@@ -137,4 +142,41 @@ body {
 
 #chance-percentage {
     animation: flicker 0.2s infinite;
+}
+
+#report {
+    width: 80vw;
+    height: 80vh;
+    background-color: #000000;
+    padding: 1rem;
+    font-size: 1.5vh;
+    overflow-y: auto;
+}
+
+#background {
+    width: 100%;
+    height: 25vh;
+    background-color: #7f8c8d; /* Asbestos */
+}
+
+#academic-stats {
+    width: 100%;
+    height: 10vh;
+    background-color: #95a5a6; /* Concrete */
+}
+
+#awards {
+    width: 100%;
+    height: 20vh;
+    background-color: #bdc3c7; /* Silver */
+}
+
+#extracurriculars {
+    width: 100%;
+    height: 20vh;
+    background-color: #d5d8dc; /* Light Grey */
+}
+
+#essays {
+    background-color: #ecf0f1; /* Clouds */
 }

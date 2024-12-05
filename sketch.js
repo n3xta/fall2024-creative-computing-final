@@ -1,4 +1,5 @@
 let bodyPose;
+let reportGenerated = false; // 添加标志变量
 
 function preload() {
   bodyPose = ml5.bodyPose("BlazePose");
@@ -64,6 +65,57 @@ function gotPoses(results) {
 
 function draw() {
   canvases.forEach(canvas => canvas.draw(video, poses));
+  checkRightEye();
+}
+
+function checkRightEye() {
+  const rightEyePose = poses.length > 0 ? poses[0].keypoints.find(k => k.name === "right_eye") : null;
+
+  if (!rightEyePose || rightEyePose.confidence <= 0.1) {
+    clearReport();
+    document.getElementById('report').style.display = 'block';
+    reportGenerated = false; // 重置标志变量
+  } else if (!reportGenerated) {
+    generateRandomReport();
+    document.getElementById('report').style.display = 'block';
+    reportGenerated = true; // 设置标志变量
+  }
+}
+
+function clearReport() {
+  document.getElementById('background').innerHTML = `
+    <h2>Background</h2>
+    <p><strong>Gender:</strong> </p>
+    <p><strong>Ethnicity:</strong> </p>
+    <p><strong>School Type:</strong> </p>
+    <p><strong>Sexual Orientation:</strong> </p>
+    <p><strong>First-Gen Status:</strong> </p>
+    <p><strong>Nationality:</strong> </p>
+    <p><strong>Intended Majors:</strong> </p>
+    <p><strong>Notable Tags:</strong> </p>
+  `;
+
+  document.getElementById('academic-stats').innerHTML = `
+    <h2>Academic Stats</h2>
+    <p><strong>SAT:</strong> </p>
+    <p><strong>TOEFL:</strong> </p>
+    <p><strong>AP Scores:</strong> </p>
+  `;
+
+  document.getElementById('awards').innerHTML = `
+    <h2>Awards</h2>
+    <ul></ul>
+  `;
+
+  document.getElementById('extracurriculars').innerHTML = `
+    <h2>Extracurriculars</h2>
+    <ol></ol>
+  `;
+
+  document.getElementById('essays').innerHTML = `
+    <h2>Essays</h2>
+    <p><strong>Personal Statement:</strong> </p>
+  `;
 }
 
 // Add code to generate the report
@@ -355,8 +407,8 @@ function generateRandomReport() {
   const intendedMajors = randomItems(intendedMajorsList, 1, 2);
   const notableTags = randomItems(notableTagsList, 1, 3);
 
-  const satMath = getRandomInt(600, 800);
-  const satRW = getRandomInt(600, 800);
+  const satMath = getRandomInt(60, 80) * 10;
+  const satRW = getRandomInt(60, 80) * 10;
   const satTotal = satMath + satRW;
 
   const toeflR = getRandomInt(20, 30);
@@ -422,11 +474,10 @@ function generateRandomReport() {
 function startFlickering() {
   const chanceElement = document.getElementById('chance-percentage');
   setInterval(() => {
-    const randomPercentage = Math.floor(Math.random() * 100) + 1;
+    const randomPercentage = Math.floor(Math.random() * 90) + 10;
     chanceElement.textContent = `${randomPercentage}%`;
   }, 99);
 }
 
 // Generate the report after the page loads
-window.addEventListener('load', generateRandomReport);
 window.addEventListener('load', startFlickering);
