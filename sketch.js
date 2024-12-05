@@ -477,5 +477,29 @@ function startFlickering() {
   }, 99);
 }
 
+function updateScrollingText() {
+  const scrollingTexts = document.querySelectorAll('.scrolling-text .text'); // 获取所有滚动文字元素
+  scrollingTexts.forEach(textElement => { // 遍历每个滚动文字元素
+    const container = textElement.parentElement; // 获取包含滚动文字的容器元素
+    const isVertical = container.classList.contains('left') || container.classList.contains('right'); // 判断滚动方向是否为垂直
+
+    // 创建临时元素获取单段文字长度
+    const tempSpan = document.createElement('span');  // 创建临时span元素
+    tempSpan.style.visibility = 'hidden'; // 隐藏临时span元素 
+    tempSpan.style.whiteSpace = 'nowrap';  // 设置临时span元素不换行
+    tempSpan.textContent = textElement.textContent; // 设置临时span元素的文本内容
+    document.body.appendChild(tempSpan); // 将临时span元素添加到body中
+
+    const textLength = isVertical ? tempSpan.offsetHeight : tempSpan.offsetWidth; // 获取单段文字长度
+    document.body.removeChild(tempSpan); // 移除临时span元素
+
+    const containerLength = isVertical ? container.offsetHeight : container.offsetWidth; // 获取容器长度
+    const repeatCount = Math.ceil(containerLength / textLength) * 2; // 计算重复次数
+
+    const originalText = textElement.textContent.trim() + ' '; // 获取原始文本并添加空格
+    textElement.textContent = originalText.repeat(repeatCount); // 设置文本内容为重复的原始文本
+  });
+}
+
 // Generate the report after the page loads
 window.addEventListener('load', startFlickering);

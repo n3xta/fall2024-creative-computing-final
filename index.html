@@ -57,12 +57,30 @@
           <div id="essays"></div>
         </div>
         <div id="chances">
-          <h2>--CHANCES <span id="chance-percentage">--%</span></h2>
+          <h2>Your Chance: <span id="chance-percentage">--%</span></h2>
         </div>
     </main>
+    <border>
+      <div class="scrolling-text top">
+        <div class="text">chance me ·</div>
+      </div>
+      <div class="scrolling-text bottom">
+        <div class="text">chance me ·</div>
+      </div>
+      <div class="scrolling-text left">
+        <div class="text">chance me ·</div>
+      </div>
+      <div class="scrolling-text right">
+        <div class="text">chance me ·</div>
+      </div>
+    </border>
     <script src="sketch.js"></script>
     <script>
-      window.addEventListener('load', startFlickering);
+      window.addEventListener('load', () => {
+        updateScrollingText();
+        startFlickering();
+      });
+      window.addEventListener('resize', updateScrollingText);
     </script>
   </body>
 </html>
