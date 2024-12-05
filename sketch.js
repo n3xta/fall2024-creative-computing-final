@@ -54,7 +54,8 @@ function setup() {
   canvases.push(new VideoCanvas("7", "mouth_left"));
   canvases.push(new VideoCanvas("8", "right_shoulder"));
 
-  video = createCapture(VIDEO);
+  video = createCapture(VIDEO, { video: { facingMode: "user" }, audio: false });
+  video.elt.setAttribute("loading", "lazy"); // Lazy load video
   video.hide();
   bodyPose.detectStart(video, gotPoses);
 }
@@ -119,65 +120,33 @@ function clearReport() {
 // Add code to generate the report
 function generateRandomReport() {
   // Define preset data arrays
-  const genders = ["Non-Binary"];
+  const genders = ["Non-Binary", "Male", "Female"];
   const ethnicities = [
-    "Asian", "Asian", "Asian", "Asian", "Asian", "Asian", "Asian", "Asian", "Asian", "Asian", 
-    "Hispanic", "Hispanic", "Hispanic", "Hispanic", "Hispanic", 
-    "Caucasian", "Caucasian", "Caucasian", "Caucasian", "Caucasian", 
-    "African American", "African American", "African American", 
-    "Native American", 
-    "Pacific Islander", 
-    "Middle Eastern", 
-    "Mixed Race", 
-    "Other"
+    "Shinobi", "Saiyan", "Elf", "Hylian", 
+    "Zaunite", "Piltoverian", "Amestrian", 
+    "Zora", "Al Bhed", "Galarian", 
+    "Moogle", "Demonkin", "Wutain", 
+    "Atlantean", "Viera", "Half-Orc", 
+    "Kree", "Asgardian", "Mandalorian", 
+    "Rito", "Skaven", "Valkyrie"
   ];
   const schoolTypes = ["Public School", "Private School", "IB School", "Boarding School"];
-  const sexualOrientations = ["Asexual", "Straight", "Bisexual"];
+  const sexualOrientations = ["Asexual", "Straight", "Bisexual", "Pansexual"];
   const firstGenStatuses = ["Yes", "No"];
   const nationalities = [
-    "USA", "USA", "USA", "USA", "USA", "USA", "USA", "USA", "USA", "USA", 
-    "China", "China", "China", "China", "China", "China", "China", "China", 
-    "India", "India", "India", "India", "India", "India", "India", "India", 
-    "Canada", "Canada", "Canada", "Canada", "Canada", 
-    "UK", "UK", "UK", "UK", "UK", 
-    "Germany", "Germany", "Germany", "Germany", 
-    "France", "France", "France", "France", 
-    "Australia", "Australia", "Australia", 
-    "Japan", "Japan", "Japan", 
-    "South Korea", "South Korea", "South Korea", 
-    "Brazil",
-    "Mexico",
-    "Russia",
-    "Italy",
-    "Spain",
-    "Netherlands",
-    "Sweden",
-    "Switzerland", 
-    "Norway",
-    "Denmark",
-    "Finland", 
-    "New Zealand", 
-    "South Africa",
-    "Argentina",
-    "Chile",
-    "Colombia",
-    "Peru", 
-    "Venezuela",
-    "Saudi Arabia", 
-    "United Arab Emirates",
-    "Turkey", 
-    "Israel", 
-    "Egypt",
-    "Nigeria",
-    "Kenya",
-    "Ghana",
-    "Vietnam",
-    "Thailand",
-    "Malaysia",
-    "Singapore",
-    "Indonesia",
-    "Philippines",
+    "Konoha", "Hogwarts", "Midgar", "Rivendell", 
+    "Shiganshina", "Mushroom Kingdom", "Pallet Town", 
+    "Zion", "Pandora", "Atlantis", 
+    "Hyrule", "Spira", "Wakanda", 
+    "Gotham City", "Star City", "The Shire", 
+    "Terra", "Eorzea", "Narnia", 
+    "Rapture", "Columbia", "Kamurocho", 
+    "Cybertron", "Ivalice", "The Citadel", 
+    "Dalaran", "Novigrad", "Night City", 
+    "Kaer Morhen", "Thedas", "Mordor"
   ];
+  
+
   const intendedMajorsList = [
     "Animal Studies",
     "Anthropology",
@@ -312,17 +281,28 @@ function generateRandomReport() {
     "Social and Cultural Analysis",
     "World Languages",
   ];
+  
   const notableTagsList = [
-    "Future Nobel Prize winner in procrastination",
-    "Self-taught AI overlord (in progress)",
-    "Professional physics nerd with a side hustle in overthinking",
-    "First-generation student of Google and YouTube tutorials",
-    "Mathlete turned sleep-deprived problem-set warrior",
-    "Award-winning expert in finding free Wi-Fi spots",
-    "Serial extracurricular joiner with zero free time",
-    "Accidental linguist (thanks to Duolingo guilt notifications)",
-    "Ambassador of chaos during group projects",
-    "High school overachiever, part-time existential crisis manager"
+    "Once grounded for hacking the family Wi-Fi password.",
+    "Middle child who mastered the art of being ignored.",
+    "Survived a summer vacation without air conditioning.",
+    "Spent childhood debating conspiracy theories with grandparents.",
+    "Only student who brought snacks to a chemistry lab.",
+    "Grew up with seven cats and zero personal space.",
+    "Bilingual, thanks to binge-watching subtitled anime.",
+    "Parents confused my AP courses with Wi-Fi passwords.",
+    "Moved schools five times, mastered awkward introductions.",
+    "Once caught writing essays during a family wedding.",
+    "Ran a side business selling erasers in fourth grade.",
+    "Family celebrated my SAT score more than birthdays.",
+    "Older sibling perfected sabotage; I perfected resilience.",
+    "Homeschool grad with a curriculum designed by Pinterest.",
+    "Babysat younger siblings while solving calculus problems.",
+    "Learned programming to fix the family’s smart fridge.",
+    "Family reunions double as competitive debate tournaments.",
+    "Survived four major moves and two broken laptops.",
+    "Youngest in a family of professional overachievers.",
+    "Parents insisted I list piano lessons from 2007.",
   ];
 
   const awardsList = [
@@ -375,6 +355,89 @@ function generateRandomReport() {
     "Senior Member of the Lunchtime Philosophers' Society<br>Led deep discussions on life’s mysteries between bites; no conclusions reached, but minds expanded."
   ];
 
+  const essaysList = [
+    {
+      title: "The Day My Alarm Clock Gave Up on Me",
+      description: "I woke up 30 minutes late for the most important debate of my life. This essay explores the complex relationship between time management, caffeine dependence, and the adrenaline-fueled art of improvisation."
+    },
+    {
+      title: "How I Negotiated Peace Between My Dog and My Roomba",
+      description: "A deep dive into conflict resolution strategies, highlighting how I brokered a truce between an overeager golden retriever and a vacuum determined to clean everything in its path."
+    },
+    {
+      title: "The Wi-Fi War: Growing Up in a Tech-Dependent Household",
+      description: "In a home where bandwidth was scarcer than affection, I became a mediator, IT technician, and occasional saboteur, learning the value of resource allocation."
+    },
+    {
+      title: "Why the Last Slice of Pizza Is Always Political",
+      description: "A socio-economic analysis of familial resource sharing, as told through countless dinnertime debates over who deserved the last slice."
+    },
+    {
+      title: "The Year I Mastered the Art of Faking Confidence",
+      description: "From failing my first public speech to winning a Model UN award, I learned that self-doubt is just an accessory you don’t have to wear."
+    },
+    {
+      title: "When the Microwave Betrayed Me",
+      description: "An exploration of resilience, sparked by an incident where my popcorn burned, setting off a chain reaction that almost canceled my study group."
+    },
+    {
+      title: "What Mario Kart Taught Me About Road Rage",
+      description: "I’ve never had a driver’s license, but years of throwing banana peels at friends in Mario Kart taught me the ethics of competition and forgiveness."
+    },
+    {
+      title: "How I Accidentally Became the Family Therapist",
+      description: "When my parents started using me as their go-to referee, I learned the importance of active listening—and when to run away."
+    },
+    {
+      title: "The Life-Changing Magic of Cleaning Out My Inbox",
+      description: "3,000 unread emails taught me about procrastination, organization, and the occasional joy of stumbling upon forgotten scholarship opportunities."
+    },
+    {
+      title: "Why I Banned Myself from Google Search During Finals",
+      description: "I thought looking up 'how to ace exams' would help. Instead, it sent me down a rabbit hole of productivity apps and study tips I never used."
+    },
+    {
+      title: "My Grandparents’ Recipe for Resilience: Dumplings and Discipline",
+      description: "A heartfelt reflection on how cooking lessons with my grandparents taught me patience, problem-solving, and the importance of a perfectly pleated dumpling."
+    },
+    {
+      title: "The Economics of Selling Candy Bars in 8th Grade",
+      description: "From underpricing Snickers to understanding supply and demand, my brief candy empire showed me the sweet (and bitter) taste of entrepreneurship."
+    },
+    {
+      title: "How a Tamagotchi Prepared Me for the Modern World",
+      description: "The anxiety of keeping a virtual pet alive in middle school became my first lesson in responsibility, time management, and inevitable failure."
+    },
+    {
+      title: "The Science Fair Project That Blew Up (Literally)",
+      description: "A miscalculation with baking soda and vinegar turned into my most valuable lesson about preparation, humility, and owning up to mistakes."
+    },
+    {
+      title: "The Curse of Being the ‘Tech Savvy’ Kid",
+      description: "Being the unofficial IT department of my family taught me patience, troubleshooting, and how to explain 'turn it off and on again' to boomers."
+    },
+    {
+      title: "Why I Never Trust GPS",
+      description: "After a 30-minute detour during a robotics competition, I discovered the importance of analog solutions in a digital world."
+    },
+    {
+      title: "The Year I Invented Homework Speedrunning",
+      description: "Completing assignments in record time taught me efficiency, but it also reminded me that some things—like sleep—should never be skipped."
+    },
+    {
+      title: "Learning Chemistry Through Cooking Disasters",
+      description: "Burning a pot of rice was the turning point that made me realize science doesn’t just belong in the lab—it’s in every mistake I make in the kitchen."
+    },
+    {
+      title: "How I Outsmarted the Vending Machine",
+      description: "After it ate my last dollar, I devised an elaborate workaround, learning persistence, resourcefulness, and the limits of institutional bureaucracy."
+    },
+    {
+      title: "The Art of Failing Spectacularly in PE Class",
+      description: "From falling off the rope climb to accidentally hitting myself with a dodgeball, I learned that effort—and humor—can be more important than success."
+    }
+  ];
+
   // Helper functions
   function randomItem(array) {
     return array[Math.floor(Math.random() * array.length)];
@@ -405,24 +468,64 @@ function generateRandomReport() {
   const intendedMajors = randomItems(intendedMajorsList, 1, 2);
   const notableTags = randomItems(notableTagsList, 1, 3);
 
-  const satMath = getRandomInt(60, 80) * 10;
-  const satRW = getRandomInt(60, 80) * 10;
+  const satMath = getRandomInt(65, 80) * 10;
+  const satRW = getRandomInt(65, 80) * 10;
   const satTotal = satMath + satRW;
 
-  const toeflR = getRandomInt(20, 30);
-  const toeflL = getRandomInt(20, 30);
-  const toeflS = getRandomInt(20, 30);
-  const toeflW = getRandomInt(20, 30);
+  const toeflR = getRandomInt(25, 30);
+  const toeflL = getRandomInt(25, 30);
+  const toeflS = getRandomInt(25, 30);
+  const toeflW = getRandomInt(25, 30);
   const toeflTotal = toeflR + toeflL + toeflS + toeflW;
 
-  const apSubjects = ["Physics C", "Calculus BC", "Chemistry"];
-  const apScores = apSubjects.map(subject => {
-    const score = getRandomInt(3, 5);
+  const apSubjects = [
+    "Physics C: Mechanics",
+    "Physics C: Electricity and Magnetism",
+    "Calculus AB",
+    "Calculus BC",
+    "Chemistry",
+    "Biology",
+    "Environmental Science",
+    "Computer Science A",
+    "Computer Science Principles",
+    "Statistics",
+    "Macroeconomics",
+    "Microeconomics",
+    "Psychology",
+    "Human Geography",
+    "World History: Modern",
+    "United States History",
+    "European History",
+    "Government and Politics: United States",
+    "Government and Politics: Comparative",
+    "English Language and Composition",
+    "English Literature and Composition",
+    "Spanish Language and Culture",
+    "Spanish Literature and Culture",
+    "French Language and Culture",
+    "German Language and Culture",
+    "Italian Language and Culture",
+    "Latin",
+    "Chinese Language and Culture",
+    "Japanese Language and Culture",
+    "Art and Design: Drawing",
+    "Art and Design: 2D Design",
+    "Art and Design: 3D Design",
+    "Music Theory",
+    "Seminar",
+    "Research"
+  ];
+
+  const apScores = randomItems(apSubjects, 1, 5).map(subject => {
+    const score = getRandomInt(4, 5);
     return `${subject} (${score})`;
   });
 
+  const ibScore = getRandomInt(38, 45); // 随机生成一个 38-45 的 IB 成绩
+
   const selectedAwards = randomItems(awardsList, 2, 3);
-  const selectedExtracurriculars = randomItems(extracurricularsList, 2, 3);
+  const selectedExtracurriculars = randomItems(extracurricularsList, 3, 5);
+  const randomEssay = randomItem(essaysList);
 
   // Populate each section individually
   const backgroundDiv = document.getElementById('background');
@@ -444,14 +547,13 @@ function generateRandomReport() {
     <p><strong>SAT:</strong> ${satTotal} (Math: ${satMath}, R/W: ${satRW})</p>
     <p><strong>TOEFL:</strong> ${toeflTotal} (R: ${toeflR}, L: ${toeflL}, S: ${toeflS}, W: ${toeflW})</p>
     <p><strong>AP Scores:</strong> ${apScores.join(", ")}</p>
+    <p><strong>IB Score:</strong> ${ibScore} out of 45</p>
   `;
 
   const awardsDiv = document.getElementById('awards');
   awardsDiv.innerHTML = `
     <h2>Awards</h2>
-    <ul>
-      ${selectedAwards.map(award => `<li>${award}</li>`).join('')}
-    </ul>
+    <p>${selectedAwards.join(", ")}</p>
   `;
 
   const extracurricularsDiv = document.getElementById('extracurriculars');
@@ -465,7 +567,7 @@ function generateRandomReport() {
   const essaysDiv = document.getElementById('essays');
   essaysDiv.innerHTML = `
     <h2>Essays</h2>
-    <p><strong>Personal Statement:</strong> "Compared rebuilding a car to rebuilding myself after failure; includes metaphors on oil changes and emotional growth."</p>
+    <p><strong>Personal Statement:</strong> <em>${randomEssay.title}</em> - ${randomEssay.description}</p>
   `;
 }
 
@@ -477,29 +579,67 @@ function startFlickering() {
   }, 99);
 }
 
-function updateScrollingText() {
-  const scrollingTexts = document.querySelectorAll('.scrolling-text .text'); // 获取所有滚动文字元素
-  scrollingTexts.forEach(textElement => { // 遍历每个滚动文字元素
-    const container = textElement.parentElement; // 获取包含滚动文字的容器元素
-    const isVertical = container.classList.contains('left') || container.classList.contains('right'); // 判断滚动方向是否为垂直
+function updateStaticText() {
+  const textElements = document.querySelectorAll('.scrolling-text .text'); // 获取所有文字元素
+  if (textElements.length === 0) return;
 
-    // 创建临时元素获取单段文字长度
-    const tempSpan = document.createElement('span');  // 创建临时span元素
-    tempSpan.style.visibility = 'hidden'; // 隐藏临时span元素 
-    tempSpan.style.whiteSpace = 'nowrap';  // 设置临时span元素不换行
-    tempSpan.textContent = textElement.textContent; // 设置临时span元素的文本内容
-    document.body.appendChild(tempSpan); // 将临时span元素添加到body中
+  const textLength = 100; // 硬编码文本长度为 100px
 
-    const textLength = isVertical ? tempSpan.offsetHeight : tempSpan.offsetWidth; // 获取单段文字长度
-    document.body.removeChild(tempSpan); // 移除临时span元素
+  textElements.forEach(textElement => {
+    const container = textElement.parentElement; // 获取文字的容器
+    const isVertical = container.classList.contains('left') || container.classList.contains('right'); // 判断方向
 
-    const containerLength = isVertical ? container.offsetHeight : container.offsetWidth; // 获取容器长度
-    const repeatCount = Math.ceil(containerLength / textLength) * 2; // 计算重复次数
+    const containerLength = isVertical ? container.offsetHeight : container.offsetWidth; // 测量容器长度
 
-    const originalText = textElement.textContent.trim() + ' '; // 获取原始文本并添加空格
-    textElement.textContent = originalText.repeat(repeatCount); // 设置文本内容为重复的原始文本
+    // 打印调试信息
+    console.log(`Text: ${textElement.textContent.trim()}`);
+    console.log(`Text Length: ${textLength}`);
+    console.log(`Container Length: ${containerLength}`);
+
+    const repeatCount = Math.ceil(containerLength / textLength) + 1; // 计算需要重复的次数，确保填满
+
+    const originalText = textElement.textContent.trim() + ' '; // 原始文字加空格
+    textElement.textContent = originalText.repeat(repeatCount); // 重复文字直到填满
+
+    // 打印调试信息
+    console.log(`Repeat Count: ${repeatCount}`);
+    console.log(`Final Text: ${textElement.textContent}`);
   });
 }
 
-// Generate the report after the page loads
+function createInfiniteScrollingLoop() {
+  const textContainers = document.querySelectorAll('.scrolling-text');
+
+  textContainers.forEach(container => {
+    const textElement = container.querySelector('.text');
+    const isVertical = container.classList.contains('left') || container.classList.contains('right');
+    const scrollSpeed = 1; // Adjust the speed as needed
+
+    function scrollText() {
+      const startTime = performance.now();
+
+      if (isVertical) {
+        container.scrollTop += scrollSpeed;
+        if (container.scrollTop >= textElement.scrollHeight) {
+          container.scrollTop = 0;
+        }
+      } else {
+        container.scrollLeft += scrollSpeed;
+        if (container.scrollLeft >= textElement.scrollWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+
+      const endTime = performance.now();
+      console.log(`Frame time: ${endTime - startTime}ms`);
+
+      requestAnimationFrame(scrollText);
+    }
+
+    scrollText();
+  });
+}
+
 window.addEventListener('load', startFlickering);
+window.addEventListener('load', updateStaticText);
+window.addEventListener('load', createInfiniteScrollingLoop);
