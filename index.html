@@ -4,57 +4,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
     <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="utf-8" />
   </head>
   <body>
     <main>
-        <!-- <div>1222</div> -->
-        <div class="bento-grid-wrapper">
-            <div class="bento-grid">
-                <div class="container">
-                    <canvas id="1"></canvas>
-                </div>
+      <div id="report1">
+        <div id="background"></div>
+        <div id="academic-stats"></div>
+      </div>
+      <div class="bento-grid-wrapper">
+          <div class="bento-grid">
+              <div class="container">
+                  <canvas id="1"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="2"></canvas>
-                </div>
+              <div class="container">
+                  <canvas id="2"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="3"></canvas>
-                </div>
+              <div class="container">
+                  <canvas id="3"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="4"></canvas>
-                </div>
+              <div class="container">
+                  <canvas id="4"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="5"></canvas>
-                </div>
+              <div class="container">
+                  <canvas id="5"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="6"></canvas>
-                </div>
+              <div class="container">
+                  <canvas id="6"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="7"></canvas>
-                </div>
+              <div class="container">
+                  <canvas id="7"></canvas>
+              </div>
 
-                <div class="container">
-                    <canvas id="8"></canvas>
-                </div>
-            </div>
+              <div class="container">
+                  <canvas id="8"></canvas>
+              </div>
+          </div>
         </div>
-        <div id="report">
-          <h1>Chance Me</h1>
-          <div id="background"></div>
-          <div id="academic-stats"></div>
+        <div id="report2">
           <div id="awards"></div>
           <div id="extracurriculars"></div>
           <div id="essays"></div>
         </div>
         <div id="chances">
-          <h2>Your chances of getting into NYU: <span id="chance-percentage">--%</span></h2>
+          <h2>--CHANCES <span id="chance-percentage">--%</span></h2>
         </div>
     </main>
     <script src="sketch.js"></script>

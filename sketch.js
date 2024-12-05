@@ -73,11 +73,9 @@ function checkRightEye() {
 
   if (!rightEyePose || rightEyePose.confidence <= 0.1) {
     clearReport();
-    document.getElementById('report').style.display = 'block';
     reportGenerated = false; // 重置标志变量
   } else if (!reportGenerated) {
     generateRandomReport();
-    document.getElementById('report').style.display = 'block';
     reportGenerated = true; // 设置标志变量
   }
 }
@@ -349,32 +347,32 @@ function generateRandomReport() {
   ];
 
   const extracurricularsList = [
-    "Founder and President of the Procrastinators' Club\nOrganized last-minute study sessions; increased average grades by proving the effectiveness of adrenaline-fueled cramming.",
-    "CEO of the Midnight Snack Distribution Network\nManaged logistics for nocturnal food deliveries in the dorm; optimized snack satisfaction rates among students.",
-    "Captain of the Debate Team Against Myself\nHeld solo debates to prepare for competitions; undefeated record with zero losses.",
-    "Head Organizer of the Annual Invisible Art Exhibition\nCurated \"invisible\" artworks; event praised for its minimalist aesthetic and sold out (figuratively).",
-    "President of the Society for the Appreciation of Unfinished Projects\nHosted weekly meetings to start new projects; none completed, but creativity levels soared.",
-    "Organizer of Disco for Introverts\nHosted dance parties where participants enjoyed music individually.",
-    "Lead Volunteer for the Wi-Fi Password Sharing for All Campaign\nExtended school's Wi-Fi range to nearby coffee shops; connected over 100 caffeine-dependent students.",
-    "Founder of the Nap Time Awareness Movement\nAdvocated for designated nap periods; improved overall school mood and alertness.",
-    "Director of the Anti-Awkward Elevator Silence Initiative\nInstalled custom elevator music composed by students; reduced uncomfortable rides by 100%.",
-    "Pioneer of the Study on Caffeine-Induced Time Perception\nConsumed various caffeinated drinks to measure their effects on time management skills.",
-    "Intern at the Institute of Imaginary Numbers\nExplored practical applications of imaginary numbers in everyday life; findings remain theoretical.",
-    "Lead Scientist in the Browser Tab Overload Experiment\nDetermined the maximum number of open tabs before system failure; results pending due to crash.",
-    "Researcher in Quantum Homework Dynamics\nInvestigated how homework size appears larger when observed; concluded it's relative to procrastination levels.",
-    "Developer of the Auto-Response Essay Generator\nCreated an AI to draft essays; increased free time while maintaining grades.",
-    "Captain of the Competitive Sleeping Team\nAchieved record-breaking nap times; team motto: \"We dream big.\"",
-    "World Record Holder in Speed Scrolling\nScrolled through social media feeds at unprecedented speeds; thumb endurance unmatched.",
-    "Master of the Ancient Art of Desk Doodling\nTransformed desks into canvases; work recognized as \"accidentally inspirational\" by peers.",
-    "Champion of the One-Person Relay Race\nCompleted all legs of a relay solo; set a school record by default.",
-    "Professional Shower Singer\nPerfected acoustics and repertoire; audience limited but enthusiastic.",
-    "Lead Analyst for Memes in Education Initiative\nIntegrated memes into study guides; increased information retention through humor.",
-    "Serial Club Attendee\nJoined every club to diversify interests; attendance records unmatched, participation levels variable.",
-    "Volunteer Human Alarm Clock\nWoke up classmates for important exams; reliability rate of 99% (excluding Daylight Saving Time).",
-    "Architect of the Perfect Paper Airplane\nDesigned planes with optimal flight paths; dominated unofficial classroom competitions.",
-    "Social Media Ghostwriter for Pets\nManaged Instagram accounts for friends' pets; increased follower counts through strategic hashtag use.",
-    "Participated in the Great Homework Swap Meet\nFacilitated a barter system for assignments; improved overall completion rates.",
-    "Senior Member of the Lunchtime Philosophers' Society\nLed deep discussions on life’s mysteries between bites; no conclusions reached, but minds expanded."
+    "Founder and President of the Procrastinators' Club<br>Organized last-minute study sessions; increased average grades by proving the effectiveness of adrenaline-fueled cramming.",
+    "CEO of the Midnight Snack Distribution Network<br>Managed logistics for nocturnal food deliveries in the dorm; optimized snack satisfaction rates among students.",
+    "Captain of the Debate Team Against Myself<br>Held solo debates to prepare for competitions; undefeated record with zero losses.",
+    "Head Organizer of the Annual Invisible Art Exhibition<br>Curated \"invisible\" artworks; event praised for its minimalist aesthetic and sold out (figuratively).",
+    "President of the Society for the Appreciation of Unfinished Projects<br>Hosted weekly meetings to start new projects; none completed, but creativity levels soared.",
+    "Organizer of Disco for Introverts<br>Hosted dance parties where participants enjoyed music individually.",
+    "Lead Volunteer for the Wi-Fi Password Sharing for All Campaign<br>Extended school's Wi-Fi range to nearby coffee shops; connected over 100 caffeine-dependent students.",
+    "Founder of the Nap Time Awareness Movement<br>Advocated for designated nap periods; improved overall school mood and alertness.",
+    "Director of the Anti-Awkward Elevator Silence Initiative<br>Installed custom elevator music composed by students; reduced uncomfortable rides by 100%.",
+    "Pioneer of the Study on Caffeine-Induced Time Perception<br>Consumed various caffeinated drinks to measure their effects on time management skills.",
+    "Intern at the Institute of Imaginary Numbers<br>Explored practical applications of imaginary numbers in everyday life; findings remain theoretical.",
+    "Lead Scientist in the Browser Tab Overload Experiment<br>Determined the maximum number of open tabs before system failure; results pending due to crash.",
+    "Researcher in Quantum Homework Dynamics<br>Investigated how homework size appears larger when observed; concluded it's relative to procrastination levels.",
+    "Developer of the Auto-Response Essay Generator<br>Created an AI to draft essays; increased free time while maintaining grades.",
+    "Captain of the Competitive Sleeping Team<br>Achieved record-breaking nap times; team motto: \"We dream big.\"",
+    "World Record Holder in Speed Scrolling<br>Scrolled through social media feeds at unprecedented speeds; thumb endurance unmatched.",
+    "Master of the Ancient Art of Desk Doodling<br>Transformed desks into canvases; work recognized as \"accidentally inspirational\" by peers.",
+    "Champion of the One-Person Relay Race<br>Completed all legs of a relay solo; set a school record by default.",
+    "Professional Shower Singer<br>Perfected acoustics and repertoire; audience limited but enthusiastic.",
+    "Lead Analyst for Memes in Education Initiative<br>Integrated memes into study guides; increased information retention through humor.",
+    "Serial Club Attendee<br>Joined every club to diversify interests; attendance records unmatched, participation levels variable.",
+    "Volunteer Human Alarm Clock<br>Woke up classmates for important exams; reliability rate of 99% (excluding Daylight Saving Time).",
+    "Architect of the Perfect Paper Airplane<br>Designed planes with optimal flight paths; dominated unofficial classroom competitions.",
+    "Social Media Ghostwriter for Pets<br>Managed Instagram accounts for friends' pets; increased follower counts through strategic hashtag use.",
+    "Participated in the Great Homework Swap Meet<br>Facilitated a barter system for assignments; improved overall completion rates.",
+    "Senior Member of the Lunchtime Philosophers' Society<br>Led deep discussions on life’s mysteries between bites; no conclusions reached, but minds expanded."
   ];
 
   // Helper functions

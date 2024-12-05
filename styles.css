@@ -12,14 +12,19 @@ canvas {
 }
 
 main{
-    display: flex;
+    display: grid;
+    width: 100%;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    grid-template-areas: 
+    'left middle right'
+    'chances chances chances';
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    background-color: black;
+    background-color: black; /* Black */
     min-height: 100vh;
     color: #333;
     display: grid;
@@ -126,9 +131,8 @@ body {
 
 #chances {
     text-align: center;
-    margin-top: 20px;
     color: white;
-    position: fixed;
+    font-size: 4vh;
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
@@ -141,42 +145,60 @@ body {
 }
 
 #chance-percentage {
-    animation: flicker 0.2s infinite;
+    animation: flicker 0.1s infinite;
 }
 
-#report {
-    width: 80vw;
-    height: 80vh;
-    background-color: #000000;
+#report1, #report2 {
+    width: 20vw;
+    height: 100%;
+    /* background-color: #703a3a; */
     padding: 1rem;
     font-size: 1.5vh;
     overflow-y: auto;
 }
 
+#report1 {
+    grid-area: left;
+}
+
+#bento-grid-wrapper {
+    grid-area: middle;
+}
+
+#report2 {
+    grid-area: right;
+}
+
+#chances {
+    grid-area: chances;
+}
+
 #background {
     width: 100%;
     height: 25vh;
-    background-color: #7f8c8d; /* Asbestos */
+    /* background-color: #7f8c8d;*/
 }
 
 #academic-stats {
     width: 100%;
     height: 10vh;
-    background-color: #95a5a6; /* Concrete */
+    /* background-color: #95a5a6;*/
 }
 
 #awards {
     width: 100%;
     height: 20vh;
-    background-color: #bdc3c7; /* Silver */
+    /* background-color: #bdc3c7;*/
 }
 
 #extracurriculars {
     width: 100%;
     height: 20vh;
-    background-color: #d5d8dc; /* Light Grey */
+    /* background-color: #d5d8dc; */
 }
 
 #essays {
-    background-color: #ecf0f1; /* Clouds */
+    width: 100%;
+    height: 20vh;
+    /* background-color: #ecf0f1; */
 }
