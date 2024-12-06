@@ -55,7 +55,7 @@ body {
 }
 
 .bento-grid .container {
-    border-radius: .9rem;
+    /* border-radius: .9rem; */
     overflow: hidden;
 }
 
@@ -140,6 +140,7 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px 0;
+    font-family: 'Funnel Display', sans-serif;
 }
 
 @keyframes flicker {
@@ -147,8 +148,19 @@ body {
     50% { opacity: 0.1; }
 }
 
-#chance-percentage {
+#chance-percentage.flicker {
     animation: flicker 0.1s infinite;
+}
+
+#chances h2 {
+    background-color: white;
+    color: black;
+    display: inline-block;
+    padding: 0 5px;
+    margin-bottom: .5vh; /* Add space after the subtitle line */
+    width: 100%; /* Make the background color fit the width of the whole div */
+    height: 8.1vh;
+    text-align: center; /* Center the text */
 }
 
 #report1, #report2 {
@@ -224,7 +236,7 @@ body {
 }
 
 border{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Funnel Display', sans-serif;
 }
 
 /* 滚动文本的公共样式 */
@@ -294,14 +306,4 @@ h2 {
     display: inline-block;
     padding: 0 5px;
     margin-bottom: .5vh; /* Add space after the subtitle line */
-}
-
-#chances h2 {
-    background-color: white;
-    color: black;
-    display: inline-block;
-    padding: 0 5px;
-    margin-bottom: .5vh; /* Add space after the subtitle line */
-    width: 100%; /* Make the background color fit the width of the whole div */
-    text-align: center; /* Center the text */
 }

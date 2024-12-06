@@ -69,17 +69,34 @@ function draw() {
   checkRightEye();
 }
 
+// ...existing code...
 function checkRightEye() {
   const rightEyePose = poses.length > 0 ? poses[0].keypoints.find(k => k.name === "right_eye") : null;
+  const chanceElement = document.getElementById('chance-percentage');
 
   if (!rightEyePose || rightEyePose.confidence <= 0.1) {
     clearReport();
     reportGenerated = false; // 重置标志变量
+    chanceElement.textContent = "??"; // 设置为 "??"
+    chanceElement.classList.remove('flicker'); // 移除闪烁效果
   } else if (!reportGenerated) {
     generateRandomReport();
     reportGenerated = true; // 设置标志变量
+    chanceElement.classList.add('flicker'); // 添加闪烁效果
+    startFlickering(); // 开始闪烁
   }
 }
+// ...existing code...
+function startFlickering() {
+  const chanceElement = document.getElementById('chance-percentage');
+  if (chanceElement.textContent !== "??") { // 仅当不为 "??" 时才开始闪烁
+    setInterval(() => {
+      const randomPercentage = Math.floor(Math.random() * 90) + 10;
+      chanceElement.textContent = `${randomPercentage}`;
+    }, 99);
+  }
+}
+// ...existing code...
 
 function clearReport() {
   document.getElementById('background').innerHTML = `
@@ -465,7 +482,7 @@ function generateRandomReport() {
   const firstGenStatus = randomItem(firstGenStatuses);
   const nationality = randomItem(nationalities);
   const intendedMajors = randomItems(intendedMajorsList, 1, 2);
-  const notableTags = randomItems(notableTagsList, 1, 3);
+  const notableTags = randomItems(notableTagsList, 1, 2);
 
   const satMath = getRandomInt(65, 80) * 10;
   const satRW = getRandomInt(65, 80) * 10;
@@ -566,14 +583,6 @@ function generateRandomReport() {
   `;
 }
 
-function startFlickering() {
-  const chanceElement = document.getElementById('chance-percentage');
-  setInterval(() => {
-    const randomPercentage = Math.floor(Math.random() * 90) + 10;
-    chanceElement.textContent = `${randomPercentage}`;
-  }, 99);
-}
-
 function updateStaticText() {
   const textElements = document.querySelectorAll('.scrolling-text .text'); // 获取所有文字元素
   if (textElements.length === 0) return;
@@ -604,4 +613,3 @@ function updateStaticText() {
 
 window.addEventListener('load', startFlickering);
 window.addEventListener('load', updateStaticText);
-window.addEventListener('load', createInfiniteScrollingLoop);
