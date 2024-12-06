@@ -305,24 +305,24 @@ function generateRandomReport() {
   ];
 
   const awardsList = [
-    "Lunch-Time Homework Champion (3 Years Running) – Known for completing assignments with one hand while eating with the other.",
-    "Regional Procrastination Recovery Award – Awarded for submitting a 10-page essay 30 seconds before the deadline.",
-    "Netflix Multi-Tasking Scholar – Simultaneously binge-watched 12 seasons of a show while studying for finals.",
-    "National Bed-Head Physics Olympiad Finalist – Scored top marks while attending via Zoom from bed.",
-    "Midnight Snack Productivity Award – Solved three physics problems during a 2 a.m. kitchen run.",
-    "Advanced Bathroom Break Debater – Crafted and won arguments in under five minutes between classes.",
-    "3x Spreadsheet Formatting State Champion – Known for perfectly aligned cells and color-coded glory.",
-    "Google Search Olympian (Silver Medal) – Found obscure research papers faster than librarians.",
-    "Lofi Study Vibes International Competitor – Represented the nation in chill beats while grinding out problem sets.",
-    "\"Ctrl+Z Savior Award\" – Recovered a deleted essay seconds before submission.",
-    "Elite Email Refresh League MVP – Achieved 500 refreshes per minute during college application season.",
-    "Ergonomic Desk Setup Engineer – Optimized workspace to maximize back pain and mental breakdown efficiency.",
-    "Caffeine Chemistry Bowl (Bronze) – Perfected the molecular ratio for staying awake during finals.",
-    "AI-Generated Response Coordinator – Outsourced 15 discussion board posts to ChatGPT without detection.",
-    "Honors in Nap-Time Microeconomics – Solved a market equilibrium question mid-power nap.",
-    "Regional Tab-Closing Marathoner (Platinum) – Successfully closed 200+ tabs after a six-hour study session.",
-    "National Calculator Speed-Input Medalist – Entered integrals with zero typos at record-breaking speed.",
-    "International Binder Organization Laureate – Recognized for color-coded tabs and flawless annotation techniques."
+    "<strong>Lunch-Time Homework Champion (3 Years Running)</strong> <br>Known for completing assignments with one hand while eating with the other.",
+    "<strong>Regional Procrastination Recovery Award</strong> <br>Awarded for submitting a 10-page essay 30 seconds before the deadline.",
+    "<strong>Netflix Multi-Tasking Scholar</strong> <br>Simultaneously binge-watched 12 seasons of a show while studying for finals.",
+    "<strong>National Bed-Head Physics Olympiad Finalist</strong> <br>Scored top marks while attending via Zoom from bed.",
+    "<strong>Midnight Snack Productivity Award</strong> <br>Solved three physics problems during a 2 a.m. kitchen run.",
+    "<strong>Advanced Bathroom Break Debater</strong> <br>Crafted and won arguments in under five minutes between classes.",
+    "<strong>3x Spreadsheet Formatting State Champion</strong> <br>Known for perfectly aligned cells and color-coded glory.",
+    "<strong>Google Search Olympian (Silver Medal)</strong> <br>Found obscure research papers faster than librarians.",
+    "<strong>Lofi Study Vibes International Competitor</strong> <br>Represented the nation in chill beats while grinding out problem sets.",
+    "<strong>\"Ctrl+Z Savior Award\"</strong> <br>Recovered a deleted essay seconds before submission.",
+    "<strong>Elite Email Refresh League MVP</strong> <br>Achieved 500 refreshes per minute during college application season.",
+    "<strong>Ergonomic Desk Setup Engineer</strong> <br>Optimized workspace to maximize back pain and mental breakdown efficiency.",
+    "<strong>Caffeine Chemistry Bowl (Bronze)</strong> <br>Perfected the molecular ratio for staying awake during finals.",
+    "<strong>AI-Generated Response Coordinator</strong> <br>Outsourced 15 discussion board posts to ChatGPT without detection.",
+    "<strong>Honors in Nap-Time Microeconomics</strong> <br>Solved a market equilibrium question mid-power nap.",
+    "<strong>Regional Tab-Closing Marathoner (Platinum)</strong> <br>Successfully closed 200+ tabs after a six-hour study session.",
+    "<strong>National Calculator Speed-Input Medalist</strong> <br>Entered integrals with zero typos at record-breaking speed.",
+    "<strong>International Binder Organization Laureate</strong> <br>Recognized for color-coded tabs and flawless annotation techniques."
   ];
 
   const extracurricularsList = [
@@ -510,8 +510,7 @@ function generateRandomReport() {
     "Art and Design: Drawing",
     "Art and Design: 2D Design",
     "Art and Design: 3D Design",
-    "Music Theory",
-    "Research"
+    "Music Theory"
   ];
 
   const apScores = randomItems(apSubjects, 1, 5).map(subject => {
@@ -563,7 +562,7 @@ function generateRandomReport() {
   const essaysDiv = document.getElementById('essays');
   essaysDiv.innerHTML = `
     <h2>Essays</h2>
-    <p><strong>Personal Statement:</strong> <em>${randomEssay.title}</em> - ${randomEssay.description}</p>
+    <p><strong>Personal Statement:</strong> <em>"${randomEssay.title}"</em> <br> ${randomEssay.description}</p>
   `;
 }
 
