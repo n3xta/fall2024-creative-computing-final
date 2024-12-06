@@ -24,21 +24,22 @@ main{
 }
 
 body {
-    margin-top: 20px;
+    margin-top: 4vh;
     background-color: black; /* Black */
     min-height: 100vh;
     color: #333;
     display: grid;
     place-content: center;
     padding: 0;
+    overflow: hidden; /* Hide scrollbar */
 }
 
 .bento-grid {
-    max-width: 50vw;
+    width: 50vw;
     margin: 1rem;
     display: grid;
     grid-auto-columns: 1;
-    grid-auto-rows: 3.6vw; /* overall height is dependent on this */
+    grid-auto-rows: 6.5vh; /* overall height is dependent on this */
     gap: 20px;
     grid-template-areas: 
     'box1 box2 box2 box3'
@@ -54,7 +55,7 @@ body {
 }
 
 .bento-grid .container {
-    border-radius: .5rem;
+    border-radius: .9rem;
     overflow: hidden;
 }
 
@@ -151,15 +152,17 @@ body {
 }
 
 #report1, #report2 {
-    width: 20vw;
+    width: 23vw;
     height: 100%;
     /* background-color: #703a3a; */
     padding: 1rem;
     font-size: 1.5vh;
-    overflow-y: auto;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    color: whitesmoke;
 }
 
 #report1 {
+    margin-left: 30px;
     grid-area: left;
 }
 
@@ -168,6 +171,7 @@ body {
 }
 
 #report2 {
+    margin-right: 30px;
     grid-area: right;
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
@@ -183,7 +187,7 @@ body {
 
 #background {
     width: 100%;
-    height: 25vh;
+    height: 40vh;
     /* background-color: #7f8c8d;*/
 }
 
@@ -195,13 +199,13 @@ body {
 
 #awards {
     width: 100%;
-    height: 20vh;
+    height: 27vh;
     /* background-color: #bdc3c7;*/
 }
 
 #extracurriculars {
     width: 100%;
-    height: 45vh;
+    height: 35vh;
     /* background-color: #d5d8dc; */
 }
 
@@ -270,4 +274,26 @@ border{
   border-right: 2px solid white;
   background-color: white;
   padding-top: 20px;
+}
+
+.award, .extracurricular {
+  margin-bottom: 1rem; /* Add space between each item */
+}
+
+h2 {
+    background-color: white;
+    color: black;
+    display: inline-block;
+    padding: 0 5px;
+    margin-bottom: .5vh; /* Add space after the subtitle line */
+}
+
+#chances h2 {
+    background-color: white;
+    color: black;
+    display: inline-block;
+    padding: 0 5px;
+    margin-bottom: .5vh; /* Add space after the subtitle line */
+    width: 100%; /* Make the background color fit the width of the whole div */
+    text-align: center; /* Center the text */
 }

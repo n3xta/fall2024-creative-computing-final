@@ -212,7 +212,6 @@ function generateRandomReport() {
     "Economics",
     "Environmental Studies",
     "Experiential Learning",
-    "Fieldwork Seminar",
     "Life Science",
     "Topics in Humanities",
     "Art History",
@@ -283,26 +282,26 @@ function generateRandomReport() {
   ];
   
   const notableTagsList = [
-    "Once grounded for hacking the family Wi-Fi password.",
-    "Middle child who mastered the art of being ignored.",
-    "Survived a summer vacation without air conditioning.",
-    "Spent childhood debating conspiracy theories with grandparents.",
-    "Only student who brought snacks to a chemistry lab.",
-    "Grew up with seven cats and zero personal space.",
-    "Bilingual, thanks to binge-watching subtitled anime.",
-    "Parents confused my AP courses with Wi-Fi passwords.",
-    "Moved schools five times, mastered awkward introductions.",
-    "Once caught writing essays during a family wedding.",
-    "Ran a side business selling erasers in fourth grade.",
-    "Family celebrated my SAT score more than birthdays.",
-    "Older sibling perfected sabotage; I perfected resilience.",
-    "Homeschool grad with a curriculum designed by Pinterest.",
-    "Babysat younger siblings while solving calculus problems.",
-    "Learned programming to fix the family’s smart fridge.",
-    "Family reunions double as competitive debate tournaments.",
-    "Survived four major moves and two broken laptops.",
-    "Youngest in a family of professional overachievers.",
-    "Parents insisted I list piano lessons from 2007.",
+    "Once grounded for hacking the family Wi-Fi password",
+    "Middle child who mastered the art of being ignored",
+    "Survived a summer vacation without air conditioning",
+    "Spent childhood debating conspiracy theories with grandparents",
+    "Only student who brought snacks to a chemistry lab",
+    "Grew up with seven cats and zero personal space",
+    "Bilingual, thanks to binge-watching subtitled anime",
+    "Parents confused my AP courses with Wi-Fi passwords",
+    "Moved schools five times, mastered awkward introductions",
+    "Once caught writing essays during a family wedding",
+    "Ran a side business selling erasers in fourth grade",
+    "Family celebrated my SAT score more than birthdays",
+    "Older sibling perfected sabotage; I perfected resilience",
+    "Homeschool grad with a curriculum designed by Pinterest",
+    "Babysat younger siblings while solving calculus problems",
+    "Learned programming to fix the family’s smart fridge",
+    "Family reunions double as competitive debate tournaments",
+    "Survived four major moves and two broken laptops",
+    "Youngest in a family of professional overachievers",
+    "Parents insisted I list piano lessons from 2007",
   ];
 
   const awardsList = [
@@ -327,32 +326,32 @@ function generateRandomReport() {
   ];
 
   const extracurricularsList = [
-    "Founder and President of the Procrastinators' Club<br>Organized last-minute study sessions; increased average grades by proving the effectiveness of adrenaline-fueled cramming.",
-    "CEO of the Midnight Snack Distribution Network<br>Managed logistics for nocturnal food deliveries in the dorm; optimized snack satisfaction rates among students.",
-    "Captain of the Debate Team Against Myself<br>Held solo debates to prepare for competitions; undefeated record with zero losses.",
-    "Head Organizer of the Annual Invisible Art Exhibition<br>Curated \"invisible\" artworks; event praised for its minimalist aesthetic and sold out (figuratively).",
-    "President of the Society for the Appreciation of Unfinished Projects<br>Hosted weekly meetings to start new projects; none completed, but creativity levels soared.",
-    "Organizer of Disco for Introverts<br>Hosted dance parties where participants enjoyed music individually.",
-    "Lead Volunteer for the Wi-Fi Password Sharing for All Campaign<br>Extended school's Wi-Fi range to nearby coffee shops; connected over 100 caffeine-dependent students.",
-    "Founder of the Nap Time Awareness Movement<br>Advocated for designated nap periods; improved overall school mood and alertness.",
-    "Director of the Anti-Awkward Elevator Silence Initiative<br>Installed custom elevator music composed by students; reduced uncomfortable rides by 100%.",
-    "Pioneer of the Study on Caffeine-Induced Time Perception<br>Consumed various caffeinated drinks to measure their effects on time management skills.",
-    "Intern at the Institute of Imaginary Numbers<br>Explored practical applications of imaginary numbers in everyday life; findings remain theoretical.",
-    "Lead Scientist in the Browser Tab Overload Experiment<br>Determined the maximum number of open tabs before system failure; results pending due to crash.",
-    "Researcher in Quantum Homework Dynamics<br>Investigated how homework size appears larger when observed; concluded it's relative to procrastination levels.",
-    "Developer of the Auto-Response Essay Generator<br>Created an AI to draft essays; increased free time while maintaining grades.",
-    "Captain of the Competitive Sleeping Team<br>Achieved record-breaking nap times; team motto: \"We dream big.\"",
-    "World Record Holder in Speed Scrolling<br>Scrolled through social media feeds at unprecedented speeds; thumb endurance unmatched.",
-    "Master of the Ancient Art of Desk Doodling<br>Transformed desks into canvases; work recognized as \"accidentally inspirational\" by peers.",
-    "Champion of the One-Person Relay Race<br>Completed all legs of a relay solo; set a school record by default.",
-    "Professional Shower Singer<br>Perfected acoustics and repertoire; audience limited but enthusiastic.",
-    "Lead Analyst for Memes in Education Initiative<br>Integrated memes into study guides; increased information retention through humor.",
-    "Serial Club Attendee<br>Joined every club to diversify interests; attendance records unmatched, participation levels variable.",
-    "Volunteer Human Alarm Clock<br>Woke up classmates for important exams; reliability rate of 99% (excluding Daylight Saving Time).",
-    "Architect of the Perfect Paper Airplane<br>Designed planes with optimal flight paths; dominated unofficial classroom competitions.",
-    "Social Media Ghostwriter for Pets<br>Managed Instagram accounts for friends' pets; increased follower counts through strategic hashtag use.",
-    "Participated in the Great Homework Swap Meet<br>Facilitated a barter system for assignments; improved overall completion rates.",
-    "Senior Member of the Lunchtime Philosophers' Society<br>Led deep discussions on life’s mysteries between bites; no conclusions reached, but minds expanded."
+    "<strong>Founder and President of the Procrastinators' Club</strong><br>Organized last-minute study sessions; increased average grades by proving the effectiveness of adrenaline-fueled cramming.",
+    "<strong>CEO of the Midnight Snack Distribution Network</strong><br>Managed logistics for nocturnal food deliveries in the dorm; optimized snack satisfaction rates among students.",
+    "<strong>Captain of the Debate Team Against Myself</strong><br>Held solo debates to prepare for competitions; undefeated record with zero losses.",
+    "<strong>Head Organizer of the Annual Invisible Art Exhibition</strong><br>Curated \"invisible\" artworks; event praised for its minimalist aesthetic and sold out (figuratively).",
+    "<strong>President of the Society for the Appreciation of Unfinished Projects</strong><br>Hosted weekly meetings to start new projects; none completed, but creativity levels soared.",
+    "<strong>Organizer of Disco for Introverts</strong><br>Hosted dance parties where participants enjoyed music individually.",
+    "<strong>Lead Volunteer for the Wi-Fi Password Sharing for All Campaign</strong><br>Extended school's Wi-Fi range to nearby coffee shops; connected over 100 caffeine-dependent students.",
+    "<strong>Founder of the Nap Time Awareness Movement</strong><br>Advocated for designated nap periods; improved overall school mood and alertness.",
+    "<strong>Director of the Anti-Awkward Elevator Silence Initiative</strong><br>Installed custom elevator music composed by students; reduced uncomfortable rides by 100%.",
+    "<strong>Pioneer of the Study on Caffeine-Induced Time Perception</strong><br>Consumed various caffeinated drinks to measure their effects on time management skills.",
+    "<strong>Intern at the Institute of Imaginary Numbers</strong><br>Explored practical applications of imaginary numbers in everyday life; findings remain theoretical.",
+    "<strong>Lead Scientist in the Browser Tab Overload Experiment</strong><br>Determined the maximum number of open tabs before system failure; results pending due to crash.",
+    "<strong>Researcher in Quantum Homework Dynamics</strong><br>Investigated how homework size appears larger when observed; concluded it's relative to procrastination levels.",
+    "<strong>Developer of the Auto-Response Essay Generator</strong><br>Created an AI to draft essays; increased free time while maintaining grades.",
+    "<strong>Captain of the Competitive Sleeping Team</strong><br>Achieved record-breaking nap times; team motto: \"We dream big.\"",
+    "<strong>World Record Holder in Speed Scrolling</strong><br>Scrolled through social media feeds at unprecedented speeds; thumb endurance unmatched.",
+    "<strong>Master of the Ancient Art of Desk Doodling</strong><br>Transformed desks into canvases; work recognized as \"accidentally inspirational\" by peers.",
+    "<strong>Champion of the One-Person Relay Race</strong><br>Completed all legs of a relay solo; set a school record by default.",
+    "<strong>Professional Shower Singer</strong><br>Perfected acoustics and repertoire; audience limited but enthusiastic.",
+    "<strong>Lead Analyst for Memes in Education Initiative</strong><br>Integrated memes into study guides; increased information retention through humor.",
+    "<strong>Serial Club Attendee</strong><br>Joined every club to diversify interests; attendance records unmatched, participation levels variable.",
+    "<strong>Volunteer Human Alarm Clock</strong><br>Woke up classmates for important exams; reliability rate of 99% (excluding Daylight Saving Time).",
+    "<strong>Architect of the Perfect Paper Airplane</strong><br>Designed planes with optimal flight paths; dominated unofficial classroom competitions.",
+    "<strong>Social Media Ghostwriter for Pets</strong><br>Managed Instagram accounts for friends' pets; increased follower counts through strategic hashtag use.",
+    "<strong>Participated in the Great Homework Swap Meet</strong><br>Facilitated a barter system for assignments; improved overall completion rates.",
+    "<strong>Senior Member of the Lunchtime Philosophers' Society</strong><br>Led deep discussions on life’s mysteries between bites; no conclusions reached, but minds expanded."
   ];
 
   const essaysList = [
@@ -512,7 +511,6 @@ function generateRandomReport() {
     "Art and Design: 2D Design",
     "Art and Design: 3D Design",
     "Music Theory",
-    "Seminar",
     "Research"
   ];
 
@@ -523,8 +521,8 @@ function generateRandomReport() {
 
   const ibScore = getRandomInt(38, 45); // 随机生成一个 38-45 的 IB 成绩
 
-  const selectedAwards = randomItems(awardsList, 2, 3);
-  const selectedExtracurriculars = randomItems(extracurricularsList, 3, 5);
+  const selectedAwards = randomItems(awardsList, 2, 2);
+  const selectedExtracurriculars = randomItems(extracurricularsList, 3, 3);
   const randomEssay = randomItem(essaysList);
 
   // Populate each section individually
@@ -537,8 +535,8 @@ function generateRandomReport() {
     <p><strong>Sexual Orientation:</strong> ${sexualOrientation}</p>
     <p><strong>First-Gen Status:</strong> ${firstGenStatus}</p>
     <p><strong>Nationality:</strong> ${nationality}</p>
-    <p><strong>Intended Majors:</strong> ${intendedMajors.join(", ")}</p>
-    <p><strong>Notable Tags:</strong> ${notableTags.map(tag => `"${tag}"`).join(", ")}</p>
+    <p><strong>Intended Majors:</strong> ${intendedMajors.join("; ")}</p>
+    <p><strong>Notable Tags:</strong> ${notableTags.map(tag => `${tag}`).join("; ")}</p>
   `;
 
   const academicStatsDiv = document.getElementById('academic-stats');
@@ -553,15 +551,13 @@ function generateRandomReport() {
   const awardsDiv = document.getElementById('awards');
   awardsDiv.innerHTML = `
     <h2>Awards</h2>
-    <p>${selectedAwards.join(", ")}</p>
+    ${selectedAwards.map(award => `<p class="award">${award}</p>`).join('')}
   `;
 
   const extracurricularsDiv = document.getElementById('extracurriculars');
   extracurricularsDiv.innerHTML = `
     <h2>Extracurriculars</h2>
-    <ol>
-      ${selectedExtracurriculars.map(activity => `<li><strong>${activity}</strong></li>`).join('')}
-    </ol>
+    ${selectedExtracurriculars.map(activity => `<p class="extracurricular">${activity}</p>`).join('')}
   `;
 
   const essaysDiv = document.getElementById('essays');
@@ -575,7 +571,7 @@ function startFlickering() {
   const chanceElement = document.getElementById('chance-percentage');
   setInterval(() => {
     const randomPercentage = Math.floor(Math.random() * 90) + 10;
-    chanceElement.textContent = `${randomPercentage}%`;
+    chanceElement.textContent = `${randomPercentage}`;
   }, 99);
 }
 
@@ -596,7 +592,7 @@ function updateStaticText() {
     console.log(`Text Length: ${textLength}`);
     console.log(`Container Length: ${containerLength}`);
 
-    const repeatCount = Math.ceil(containerLength / textLength) + 1; // 计算需要重复的次数，确保填满
+    const repeatCount = Math.ceil(containerLength / textLength) + 1; // 计算需要重��的次数，确保填满
 
     const originalText = textElement.textContent.trim() + ' '; // 原始文字加空格
     textElement.textContent = originalText.repeat(repeatCount); // 重复文字直到填满
@@ -604,39 +600,6 @@ function updateStaticText() {
     // 打印调试信息
     console.log(`Repeat Count: ${repeatCount}`);
     console.log(`Final Text: ${textElement.textContent}`);
-  });
-}
-
-function createInfiniteScrollingLoop() {
-  const textContainers = document.querySelectorAll('.scrolling-text');
-
-  textContainers.forEach(container => {
-    const textElement = container.querySelector('.text');
-    const isVertical = container.classList.contains('left') || container.classList.contains('right');
-    const scrollSpeed = 1; // Adjust the speed as needed
-
-    function scrollText() {
-      const startTime = performance.now();
-
-      if (isVertical) {
-        container.scrollTop += scrollSpeed;
-        if (container.scrollTop >= textElement.scrollHeight) {
-          container.scrollTop = 0;
-        }
-      } else {
-        container.scrollLeft += scrollSpeed;
-        if (container.scrollLeft >= textElement.scrollWidth) {
-          container.scrollLeft = 0;
-        }
-      }
-
-      const endTime = performance.now();
-      console.log(`Frame time: ${endTime - startTime}ms`);
-
-      requestAnimationFrame(scrollText);
-    }
-
-    scrollText();
   });
 }
 
