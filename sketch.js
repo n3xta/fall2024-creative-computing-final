@@ -69,7 +69,6 @@ function draw() {
   checkRightEye();
 }
 
-// ...existing code...
 function checkRightEye() {
   const rightEyePose = poses.length > 0 ? poses[0].keypoints.find(k => k.name === "right_eye") : null;
   const chanceElement = document.getElementById('chance-percentage');
@@ -84,9 +83,14 @@ function checkRightEye() {
     reportGenerated = true; // 设置标志变量
     chanceElement.classList.add('flicker'); // 添加闪烁效果
     startFlickering(); // 开始闪烁
+    setTimeout(() => {
+      if (reportGenerated == true) {
+        console.log("audience is still here");
+      }
+    }, 10000);
   }
 }
-// ...existing code...
+
 function startFlickering() {
   const chanceElement = document.getElementById('chance-percentage');
   if (chanceElement.textContent !== "??") { // 仅当不为 "??" 时才开始闪烁
@@ -96,7 +100,6 @@ function startFlickering() {
     }, 99);
   }
 }
-// ...existing code...
 
 function clearReport() {
   document.getElementById('background').innerHTML = `
@@ -587,7 +590,7 @@ function updateStaticText() {
   const textElements = document.querySelectorAll('.scrolling-text .text'); // 获取所有文字元素
   if (textElements.length === 0) return;
 
-  const textLength = 100; // 硬编码文本长度为 100px
+  const textLength = 80;
 
   textElements.forEach(textElement => {
     const container = textElement.parentElement; // 获取文字的容器
@@ -600,7 +603,7 @@ function updateStaticText() {
     console.log(`Text Length: ${textLength}`);
     console.log(`Container Length: ${containerLength}`);
 
-    const repeatCount = Math.ceil(containerLength / textLength) + 1; // 计算需要重��的次数，确保填满
+    const repeatCount = Math.ceil(containerLength / textLength) + 1; // 计算重复次数
 
     const originalText = textElement.textContent.trim() + ' '; // 原始文字加空格
     textElement.textContent = originalText.repeat(repeatCount); // 重复文字直到填满

@@ -259,7 +259,6 @@ border{
   height: 20px;
   border-top: 2px solid white;
   background-color: white;
-  padding-left: 20px;
 }
 
 /* 底部滚动文本 */
@@ -268,9 +267,7 @@ border{
   left: 0;
   width: 100vw;
   height: 20px;
-  border-bottom: 2px solid white;
   background-color: white;
-  padding-left: 20px;
 }
 
 /* 左侧滚动文本 */
@@ -281,7 +278,6 @@ border{
   height: 100vh;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  border-left: 2px solid white;
   background-color: white;
 }
 
@@ -292,9 +288,7 @@ border{
   width: 20px;
   height: 100vh;
   writing-mode: vertical-rl;
-  border-right: 2px solid white;
   background-color: white;
-  padding-top: 20px;
 }
 
 .award, .extracurricular {
