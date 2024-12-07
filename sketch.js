@@ -544,46 +544,77 @@ function generateRandomReport() {
   const selectedExtracurriculars = randomItems(extracurricularsList, 3, 3);
   const randomEssay = randomItem(essaysList);
 
-  // Populate each section individually
+  // 在生成的内容中添加唯一的 ID
   const backgroundDiv = document.getElementById('background');
   backgroundDiv.innerHTML = `
     <h2>Background</h2>
-    <p><strong>Gender:</strong> ${gender}</p>
-    <p><strong>Ethnicity:</strong> ${ethnicity}</p>
-    <p><strong>School Type:</strong> ${schoolType}</p>
-    <p><strong>Sexual Orientation:</strong> ${sexualOrientation}</p>
-    <p><strong>First-Gen Status:</strong> ${firstGenStatus}</p>
-    <p><strong>Nationality:</strong> ${nationality}</p>
-    <p><strong>Intended Majors:</strong> ${intendedMajors.join("; ")}</p>
-    <p><strong>Notable Tags:</strong> ${notableTags.map(tag => `${tag}`).join("; ")}</p>
+    <p><strong>Gender:</strong> <span id="gender"></span></p>
+    <p><strong>Ethnicity:</strong> <span id="ethnicity"></span></p>
+    <p><strong>School Type:</strong> <span id="schoolType"></span></p>
+    <p><strong>Sexual Orientation:</strong> <span id="sexualOrientation"></span></p>
+    <p><strong>First-Gen Status:</strong> <span id="firstGenStatus"></span></p>
+    <p><strong>Nationality:</strong> <span id="nationality"></span></p>
+    <p><strong>Intended Majors:</strong> <span id="intendedMajors"></span></p>
+    <p><strong>Notable Tags:</strong> <span id="notableTags"></span></p>
   `;
 
   const academicStatsDiv = document.getElementById('academic-stats');
   academicStatsDiv.innerHTML = `
     <h2>Academic Stats</h2>
-    <p><strong>SAT:</strong> ${satTotal} (Math: ${satMath}, R/W: ${satRW})</p>
-    <p><strong>TOEFL:</strong> ${toeflTotal} (R: ${toeflR}, L: ${toeflL}, S: ${toeflS}, W: ${toeflW})</p>
-    <p><strong>AP Scores:</strong> ${apScores.join(", ")}</p>
-    <p><strong>IB Score:</strong> ${ibScore} out of 45</p>
+    <p><strong>SAT:</strong> <span id="satTotal"></span> (Math: <span id="satMath"></span>, R/W: <span id="satRW"></span>)</p>
+    <p><strong>TOEFL:</strong> <span id="toeflTotal"></span> (R: <span id="toeflR"></span>, L: <span id="toeflL"></span>, S: <span id="toeflS"></span>, W: <span id="toeflW"></span>)</p>
+    <p><strong>AP Scores:</strong> <span id="apScores"></span></p>
+    <p><strong>IB Score:</strong> <span id="ibScore"></span> out of 45</p>
   `;
 
   const awardsDiv = document.getElementById('awards');
   awardsDiv.innerHTML = `
     <h2>Awards</h2>
-    ${selectedAwards.map(award => `<p class="award">${award}</p>`).join('')}
+    ${selectedAwards.map((award, index) => `<p class="award" id="award${index}"></p>`).join('')}
   `;
 
   const extracurricularsDiv = document.getElementById('extracurriculars');
   extracurricularsDiv.innerHTML = `
     <h2>Extracurriculars</h2>
-    ${selectedExtracurriculars.map(activity => `<p class="extracurricular">${activity}</p>`).join('')}
+    ${selectedExtracurriculars.map((activity, index) => `<p class="extracurricular" id="extracurricular${index}"></p>`).join('')}
   `;
 
   const essaysDiv = document.getElementById('essays');
   essaysDiv.innerHTML = `
     <h2>Essays</h2>
-    <p><strong>Personal Statement:</strong> <em>"${randomEssay.title}"</em> <br> ${randomEssay.description}</p>
+    <p><strong>Personal Statement:</strong> <em id="essayTitle"></em> <br> <span id="essayDescription"></span></p>
   `;
+
+  gsap.registerPlugin(TextPlugin);
+  
+  const typingDuration = 1;
+  
+  gsap.to("#gender", {text: gender, duration: typingDuration, ease: "none"});
+  gsap.to("#ethnicity", {text: ethnicity, duration: typingDuration, ease: "none"});
+  gsap.to("#schoolType", {text: schoolType, duration: typingDuration, ease: "none"});
+  gsap.to("#sexualOrientation", {text: sexualOrientation, duration: typingDuration, ease: "none"});
+  gsap.to("#firstGenStatus", {text: firstGenStatus, duration: typingDuration, ease: "none"});
+  gsap.to("#nationality", {text: nationality, duration: typingDuration, ease: "none"});
+  gsap.to("#intendedMajors", {text: intendedMajors.join("; "), duration: typingDuration, ease: "none"});
+  gsap.to("#notableTags", {text: notableTags.map(tag => `${tag}`).join("; "), duration: typingDuration, ease: "none"});
+  gsap.to("#satTotal", {text: satTotal, duration: typingDuration, ease: "none"});
+  gsap.to("#satMath", {text: satMath, duration: typingDuration, ease: "none"});
+  gsap.to("#satRW", {text: satRW, duration: typingDuration, ease: "none"});
+  gsap.to("#toeflTotal", {text: toeflTotal, duration: typingDuration, ease: "none"});
+  gsap.to("#toeflR", {text: toeflR, duration: typingDuration, ease: "none"});
+  gsap.to("#toeflL", {text: toeflL, duration: typingDuration, ease: "none"});
+  gsap.to("#toeflS", {text: toeflS, duration: typingDuration, ease: "none"});
+  gsap.to("#toeflW", {text: toeflW, duration: typingDuration, ease: "none"});
+  gsap.to("#apScores", {text: apScores.join(", "), duration: typingDuration, ease: "none"});
+  gsap.to("#ibScore", {text: ibScore, duration: typingDuration, ease: "none"});
+  selectedAwards.forEach((award, index) => {
+    gsap.to(`#award${index}`, {text: award, duration: typingDuration, ease: "none"});
+  });
+  selectedExtracurriculars.forEach((activity, index) => {
+    gsap.to(`#extracurricular${index}`, {text: activity, duration: typingDuration, ease: "none"});
+  });
+  gsap.to("#essayTitle", {text: randomEssay.title, duration: typingDuration, ease: "none"});
+  gsap.to("#essayDescription", {text: randomEssay.description, duration: typingDuration, ease: "none"});
 }
 
 function updateStaticText() {
