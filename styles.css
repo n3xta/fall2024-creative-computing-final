@@ -317,7 +317,8 @@ strong {
 }
 
 #social-media {
-    margin-left: 15px;
+    margin-left: 5px;
     line-height: 2.5vh;
     color: #656565;
+    font-size: 0.7vw;
 }

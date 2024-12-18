@@ -20,8 +20,8 @@ class VideoCanvas {
       if (keypoint && keypoint.confidence > 0.95) {
         const x = keypoint.x;
         const y = keypoint.y;
-        const cropWidth = 20; // 裁剪区域的宽度
-        const cropHeight = 20; // 裁剪区域的高度
+        const cropWidth = 30; // 裁剪区域的宽度
+        const cropHeight = 30; // 裁剪区域的高度
 
         // 确保裁剪区域在视频范围内
         const sx = Math.max(0, x - cropWidth / 2);
@@ -73,16 +73,16 @@ function checkRightEye() {
   const rightEyePose = poses.length > 0 ? poses[0].keypoints.find(k => k.name === "right_eye") : null;
   const chanceElement = document.getElementById('chance-percentage');
 
-  if (!rightEyePose || rightEyePose.confidence <= 0.1) {
+  if (!rightEyePose || rightEyePose.confidence <= 0.9) {
     clearReport();
-    reportGenerated = false; // 重置标志变量
-    chanceElement.textContent = "??"; // 设置为 "??"
-    chanceElement.classList.remove('flicker'); // 移除闪烁效果
+    reportGenerated = false;
+    chanceElement.textContent = "??";
+    chanceElement.classList.remove('flicker'); 
   } else if (!reportGenerated) {
     generateRandomReport();
-    reportGenerated = true; // 设置标志变量
-    chanceElement.classList.add('flicker'); // 添加闪烁效果
-    startFlickering(); // 开始闪烁
+    reportGenerated = true; 
+    chanceElement.classList.add('flicker'); 
+    startFlickering(); 
     // setTimeout(() => {
     //   if (reportGenerated == true) {
     //     console.log("audience is still here");
@@ -1126,7 +1126,7 @@ function updateStaticText() {
 window.addEventListener('load', startFlickering);
 window.addEventListener('load', updateStaticText);
 window.addEventListener('load', () => {
-  const url = "https://n3xta.com/Chance_Me_Documentation.html";
+  const url = "https://www.instagram.com/muyuanliii";
   const canvas = document.getElementById('qrcode-canvas');
   QRCode.toCanvas(canvas, url, { color: { dark: '#656565', light: '#000000' } }, function (error) {
     if (error) console.error(error);
